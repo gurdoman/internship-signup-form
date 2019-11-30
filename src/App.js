@@ -14,17 +14,12 @@ class App extends Component {
   }
 
   saveUser = (email, interest) =>{
-    console.log(email, interest);
+    console.log(`Email: ${email}`, `Interest: ${interest}`);
     let userData = {
       email,
       interest
     }
-    localStorage.setItem('userData', JSON.stringify(userData));
-    this.setState({userData});
-  }
-
-  componentDidMount(){
-    let userData = JSON.parse(localStorage.getItem('userData'));
+    sessionStorage.setItem('userData', JSON.stringify(userData));
     this.setState({userData});
   }
 
@@ -33,7 +28,7 @@ class App extends Component {
       <div className="app">
         <Header />
         {
-          this.state.userData === null ? 
+          this.state.userData === "" ? 
           <Signup saveUser={this.saveUser} /> : 
           <Thanks />
         }
