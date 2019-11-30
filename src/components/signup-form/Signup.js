@@ -64,8 +64,10 @@ export default class Signup extends Component {
             </div>
             <select className="form_interest form_input" value={interest} onChange={this.handleChange}>
               <option value="" disabled hidden>Your Interests</option>
-              <option value="development">Development</option>
-              <option value="sales">Sales</option>
+              <option value="management">Project Management</option>
+              <option value="development">Web‑Development</option>
+              <option value="design">Graphic design</option>
+              <option value="marketing">Digital Marketing</option>
             </select>
           </div>
           <input 
